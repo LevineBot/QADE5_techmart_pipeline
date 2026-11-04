@@ -7,7 +7,7 @@
 ![Lint](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/lint.yml/badge.svg)
 ![Last Commit](https://img.shields.io/github/last-commit/YOUR_USERNAME/YOUR_REPO)
 
-<mark>*Replace `YOUR_USERNAME/YOUR_REPO` with your details*</mark>
+<mark>LevineBot/QADE5_techmart_pipeline</mark>
 
 ## Project Overview
 
