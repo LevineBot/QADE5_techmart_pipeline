@@ -1,0 +1,26 @@
+[project]
+name = "techmart-pipeline"
+version = "0.1.0"
+description = "TechMart data pipeline - DE5 Module 4 demo scaffold"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pandas>=1.5.0",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+lint.ignore = ["B018"]
+
+[tool.pytest.ini_options]
+addopts = "-v"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.coverage.run]
+omit = ["*/__init__.py"]
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true

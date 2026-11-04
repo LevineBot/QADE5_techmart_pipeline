@@ -1,0 +1,33 @@
+# Azure Pipelines version of .github/workflows/ci.yml and lint.yml
+#
+# Written for the Azure DevOps lab playground: a self-hosted Windows agent
+# in the Default pool with no Python installed. The first step downloads a
+# portable Python 3.12 once and reuses it on later runs.
+# On dev.azure.com you would use Microsoft-hosted agents instead
+# (pool: vmImage: ubuntu-latest) and the UsePythonVersion task.
+
+trigger:
+  branches:
+    include: [ main ]
+
+pool:
+  name: Default
+
+steps:
+  - powershell: |
+      $py = "$(Agent.ToolsDirectory)\python-3.12.7"
+      if (-not (Test-Path "$py\tools\python.exe")) {
+        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+        Invoke-WebRequest https://www.nuget.org/api/v2/package/python/3.12.7 -OutFile "$(Agent.TempDirectory)\python.zip" -UseBasicParsing
+        Expand-Archive "$(Agent.TempDirectory)\python.zip" $py -Force
+      }
+    displayName: Get Python 3.12
+
+  - script: $(Agent.ToolsDirectory)\python-3.12.7\tools\python.exe -m ensurepip && $(Agent.ToolsDirectory)\python-3.12.7\tools\python.exe -m pip install -r requirements.txt
+    displayName: Install dependencies
+
+  - script: $(Agent.ToolsDirectory)\python-3.12.7\tools\python.exe -m pytest --cov=src --cov-report=term-missing
+    displayName: Run tests with coverage
+
+  - script: $(Agent.ToolsDirectory)\python-3.12.7\tools\python.exe -m ruff check .
+    displayName: Run Ruff
