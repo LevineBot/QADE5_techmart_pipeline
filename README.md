@@ -8,6 +8,7 @@
 ![Last Commit](https://img.shields.io/github/last-commit/YOUR_USERNAME/YOUR_REPO)
 
 <mark>LevineBot/QADE5_techmart_pipeline</mark>
+![Open Issues](https://img.shields.io/github/issues/LevineBot/QADE5_techmart_pipeline
 
 ## Project Overview
 
