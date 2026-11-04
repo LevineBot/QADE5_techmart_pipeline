@@ -1,5 +1,6 @@
 # TechMart Data Pipeline
 
+
 ![Teaching](https://img.shields.io/badge/module-DE5M4-blue)
 ![Python Version](https://img.shields.io/badge/python-3.9--3.12-blue.svg)
 
@@ -7,7 +8,9 @@
 ![Lint](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/lint.yml/badge.svg)
 ![Last Commit](https://img.shields.io/github/last-commit/YOUR_USERNAME/YOUR_REPO)
 
-<mark>*Replace `YOUR_USERNAME/YOUR_REPO` with your details*</mark>
+<mark>LevineBot/QADE5_techmart_pipeline</mark>
+
+![Open Issues](https://img.shields.io/github/issues/LevineBot/QADE5_techmart_pipeline)
 
 ## Project Overview
 
